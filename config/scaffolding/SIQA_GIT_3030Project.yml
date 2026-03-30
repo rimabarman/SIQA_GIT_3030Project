@@ -16,6 +16,12 @@ packages:
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
 - name: DADA_GlobalVariable1
+  version: "1.0"
+  gitServerName: MJANGit
+  gitUrl: https://github.com/manoj-jannu-IBM
+  gitUsername: manoj-jannu-IBM
+  gitBranch: main
+- name: SIQAJDBCAdapterTests
   gitServerName: MJANGit
   gitUrl: https://github.com/manoj-jannu-IBM
   gitUsername: manoj-jannu-IBM
@@ -26,6 +32,8 @@ services:
   - name: SIQA_GIT_3030Project
     version: "1.0"
   - name: DADA_GlobalVariable1
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
     version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
@@ -39,6 +47,8 @@ services:
     version: "1.0"
   - name: DADA_GlobalVariable1
     version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
@@ -50,6 +60,8 @@ services:
   - name: SIQA_GIT_3030Project
     version: "1.0"
   - name: DADA_GlobalVariable1
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
     version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
@@ -63,6 +75,8 @@ services:
     version: "1.0"
   - name: DADA_GlobalVariable1
     version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
@@ -74,6 +88,8 @@ services:
   - name: SIQA_GIT_3030Project
     version: "1.0"
   - name: DADA_GlobalVariable1
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
     version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
@@ -95,6 +111,8 @@ services:
     version: "1.0"
   - name: DADA_GlobalVariable1
     version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
@@ -106,6 +124,8 @@ services:
   - name: SIQA_GIT_3030Project
     version: "1.0"
   - name: DADA_GlobalVariable1
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
     version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
@@ -119,6 +139,8 @@ services:
     version: "1.0"
   - name: DADA_GlobalVariable1
     version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
@@ -130,6 +152,8 @@ services:
   - name: SIQA_GIT_3030Project
     version: "1.0"
   - name: DADA_GlobalVariable1
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
     version: "1.0"
   - name: WmJDBCAdapter
     version: 10.3.0.0.34
