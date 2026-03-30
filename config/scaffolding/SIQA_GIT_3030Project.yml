@@ -34,14 +34,22 @@ packages:
   gitUsername: manoj-jannu-IBM
   gitBranch: main
 - name: WmSalesforceProvider
+  version: 12.0.0.0.17
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
+- name: SIQA_TimeoutTest
+  gitServerName: MJANGit
+  gitUrl: https://github.com/manoj-jannu-IBM
+  gitUsername: manoj-jannu-IBM
+  gitBranch: main
 services:
 - serviceName: project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections:Database_1
   packages:
   - name: SIQA_GIT_3030Project
     version: "1.0"
   - name: DADA_GlobalVariable1
+    version: "1.0"
+  - name: SIQA_TimeoutTest
     version: "1.0"
   - name: SIQAJDBCAdapterTests
     version: "1.0"
@@ -61,6 +69,8 @@ services:
     version: "1.0"
   - name: DADA_GlobalVariable1
     version: "1.0"
+  - name: SIQA_TimeoutTest
+    version: "1.0"
   - name: SIQAJDBCAdapterTests
     version: "1.0"
   - name: WmJDBCAdapter
@@ -78,6 +88,8 @@ services:
   - name: SIQA_GIT_3030Project
     version: "1.0"
   - name: DADA_GlobalVariable1
+    version: "1.0"
+  - name: SIQA_TimeoutTest
     version: "1.0"
   - name: SIQAJDBCAdapterTests
     version: "1.0"
@@ -97,6 +109,8 @@ services:
     version: "1.0"
   - name: DADA_GlobalVariable1
     version: "1.0"
+  - name: SIQA_TimeoutTest
+    version: "1.0"
   - name: SIQAJDBCAdapterTests
     version: "1.0"
   - name: WmJDBCAdapter
@@ -114,6 +128,8 @@ services:
   - name: SIQA_GIT_3030Project
     version: "1.0"
   - name: DADA_GlobalVariable1
+    version: "1.0"
+  - name: SIQA_TimeoutTest
     version: "1.0"
   - name: SIQAJDBCAdapterTests
     version: "1.0"
@@ -133,6 +149,8 @@ services:
     version: "1.0"
   - name: DADA_GlobalVariable1
     version: "1.0"
+  - name: SIQA_TimeoutTest
+    version: "1.0"
   - name: SIQAJDBCAdapterTests
     version: "1.0"
   - name: WmJDBCAdapter
@@ -151,6 +169,8 @@ services:
     version: "1.0"
   - name: DADA_GlobalVariable1
     version: "1.0"
+  - name: SIQA_TimeoutTest
+    version: "1.0"
   - name: SIQAJDBCAdapterTests
     version: "1.0"
   - name: WmJDBCAdapter
@@ -168,6 +188,8 @@ services:
   - name: SIQA_GIT_3030Project
     version: "1.0"
   - name: DADA_GlobalVariable1
+    version: "1.0"
+  - name: SIQA_TimeoutTest
     version: "1.0"
   - name: SIQAJDBCAdapterTests
     version: "1.0"
@@ -195,6 +217,8 @@ services:
     version: "1.0"
   - name: DADA_GlobalVariable1
     version: "1.0"
+  - name: SIQA_TimeoutTest
+    version: "1.0"
   - name: SIQAJDBCAdapterTests
     version: "1.0"
   - name: WmJDBCAdapter
@@ -212,6 +236,8 @@ services:
   - name: SIQA_GIT_3030Project
     version: "1.0"
   - name: DADA_GlobalVariable1
+    version: "1.0"
+  - name: SIQA_TimeoutTest
     version: "1.0"
   - name: SIQAJDBCAdapterTests
     version: "1.0"
@@ -231,6 +257,48 @@ services:
     version: "1.0"
   - name: DADA_GlobalVariable1
     version: "1.0"
+  - name: SIQA_TimeoutTest
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.17
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.16
+  - name: SIQACloudStreamsTests
+    version: "1.0"
+- serviceName: project.siqa_git_3030.integrations:Test_SoapConnector
+  packages:
+  - name: SIQA_GIT_3030Project
+    version: "1.0"
+  - name: DADA_GlobalVariable1
+    version: "1.0"
+  - name: SIQA_TimeoutTest
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.17
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.16
+  - name: SIQACloudStreamsTests
+    version: "1.0"
+- serviceName: project.siqa_git_3030.WmSalesforceProvider.com_webmethods_cloudstreams_salesforce_v53.operations.actions:TestSoap
+  packages:
+  - name: SIQA_GIT_3030Project
+    version: "1.0"
+  - name: DADA_GlobalVariable1
+    version: "1.0"
+  - name: SIQA_TimeoutTest
+    version: "1.0"
   - name: SIQAJDBCAdapterTests
     version: "1.0"
   - name: WmJDBCAdapter
@@ -248,6 +316,8 @@ services:
   - name: SIQA_GIT_3030Project
     version: "1.0"
   - name: DADA_GlobalVariable1
+    version: "1.0"
+  - name: SIQA_TimeoutTest
     version: "1.0"
   - name: SIQAJDBCAdapterTests
     version: "1.0"
@@ -335,6 +405,8 @@ configurationVariables:
   : "true"
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cn.hostnameVerifier
   : org.apache.http.conn.ssl.DefaultHostnameVerifier
+  ? iscloudstreamsconnectorservice.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..operations..actions:TestSoap.connectionAlias
+  : project.siqa_git_3030.WmSalesforceProvider.com_webmethods_cloudstreams_salesforce_v53.connections:SoapConnAlias
   jdbcfunc.SAPTxStore.failFastMode: false
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cx.grant_type
   : refresh_token
@@ -388,6 +460,8 @@ configurationVariables:
   : "1"
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.expireTimeout
   : "1000"
+  ? iscloudstreamsconnectorservice.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..operations..actions:TestSoap.virtualServiceName
+  : WmCloudStreams.SoapVS
   ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.maximumPoolSize
   : "10"
   jdbc.SAP TxStore Pool.maxConns: "10"
