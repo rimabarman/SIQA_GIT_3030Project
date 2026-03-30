@@ -46,7 +46,7 @@
   <value name="retry_interval">0</value>
   <record name="node_hints" javaclass="com.wm.util.Values">
     <value name="lastModifiedBy">Rima.Barman@ibm.com</value>
-    <value name="lastModifiedDate">1774838093066</value>
+    <value name="lastModifiedDate">1774838403673</value>
     <value name="displayName">Test_AdapterScaffolding</value>
     <value name="description"></value>
     <array name="appList" type="record" depth="1">
@@ -60,11 +60,11 @@
         <value name="name">Database</value>
         <value name="itemType">APPS</value>
         <record name="operation" javaclass="com.wm.util.Values">
-          <value name="operationName">TestDB</value>
+          <value name="operationName">TestDB1</value>
           <value name="isCustom">true</value>
           <value name="operationType">actions</value>
           <value name="connectionType">sagcloud</value>
-          <value name="projectName">project.siqa_test_2730</value>
+          <value name="projectName">project.siqa_git_3030</value>
         </record>
         <value name="id">com.wm.adapter.wmjdbc.JDBCAdapter</value>
         <value name="providerName">WmJDBCAdapter</value>
@@ -107,14 +107,9 @@
         <array name="outputMap" type="object" depth="1" javaclass="java.lang.Object">
         </array>
         <Boolean name="accountReferenceResolved">true</Boolean>
+        <value name="nodePathForDebug">0</value>
       </record>
     </record>
-    <record name="edgeServer" javaclass="com.wm.util.Values">
-      <value name="group">Default</value>
-      <value name="id">default</value>
-      <value name="name">Cloud Execution</value>
-    </record>
-    <value name="createdDate">1774838093066</value>
   </record>
   <value name="svc_in_validator_options">none</value>
   <value name="svc_out_validator_options">none</value>
