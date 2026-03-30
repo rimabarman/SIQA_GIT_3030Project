@@ -7,13 +7,6 @@ runtimes:
     type: flow
     stepId: /0
     reference: fld_102798265_stage00.projects.fl14a2fce8d61e47c19481c69d7845178e.WmPackageServiceProvider.GB_1:readGlobalvariable
-- runtimeAlias: Cloud Designtime
-  assets:
-  - name: Untitled Workflow
-    type: workflow
-    uid: fl8b0fdab5cb9c4666a00f48066e75156f
-    stepId: a0
-    reference: SIQA_TimeoutTest:delayfor180Sec
 - runtimeAlias: SIQAMCSPStageTest3009
   assets:
   - name: fld_102798265_stage00.projects.fl14a2fce8d61e47c19481c69d7845178e.integrations:conntest
