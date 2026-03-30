@@ -28,10 +28,14 @@ packages:
   gitUsername: manoj-jannu-IBM
   gitBranch: main
 - name: SIQACloudStreamsTests
+  version: "1.0"
   gitServerName: MJANGit
   gitUrl: https://github.com/manoj-jannu-IBM
   gitUsername: manoj-jannu-IBM
   gitBranch: main
+- name: WmSalesforceProvider
+  wpmServer: https://packages.webmethods.io
+  wpmRegistry: licensed
 services:
 - serviceName: project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections:Database_1
   packages:
@@ -87,7 +91,61 @@ services:
     version: 12.0.0.0.16
   - name: SIQACloudStreamsTests
     version: "1.0"
+- serviceName: project.siqa_git_3030.WmSalesforceProvider.com_webmethods_cloudstreams_salesforce_v53.connections:SoapConnAlias
+  packages:
+  - name: SIQA_GIT_3030Project
+    version: "1.0"
+  - name: DADA_GlobalVariable1
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.17
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.16
+  - name: SIQACloudStreamsTests
+    version: "1.0"
 - serviceName: project.siqa_git_3030.WmSalesforceRESTProvider.com_webmethods_cloudstreams_salesforce_rest_v60.connections:RestConnAlias
+  packages:
+  - name: SIQA_GIT_3030Project
+    version: "1.0"
+  - name: DADA_GlobalVariable1
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.17
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.16
+  - name: SIQACloudStreamsTests
+    version: "1.0"
+- serviceName: project.siqa_git_3030.integrations:Call_refData
+  packages:
+  - name: SIQA_GIT_3030Project
+    version: "1.0"
+  - name: DADA_GlobalVariable1
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.17
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.16
+  - name: SIQACloudStreamsTests
+    version: "1.0"
+- serviceName: project.siqa_git_3030.referencedata:refData
   packages:
   - name: SIQA_GIT_3030Project
     version: "1.0"
@@ -220,17 +278,125 @@ services:
   - name: WmPublic
     version: 12.1.0.0.808
 configurationVariables:
-  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.maximumPoolSize
-  : "10"
-  jdbc.SAP TxStore Pool.maxConns: "10"
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.providerUrl
   : https://d0o000001qr6keac-dev-ed.my.salesforce.com
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.expireTimeout
+  : "1000"
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.validateAfterInactivity
   : "1000"
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.oauth_v20.authenticationServerUrl
   : https://login.salesforce.com/services/oauth2/token
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cr.preemptiveAuthEnabled
+  : "false"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.startupRetryCount
+  : "0"
   ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionEnabled
   : "false"
+  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.poolable
+  : "false"
+  jdbc.SAP TxStore Pool.password: "{AES}nrGf3u7Wt20hFBGh5ZeEuQ=="
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.oauth_v20.authorizationServerUrl
+  : https://login.salesforce.com/services/oauth2/authorize
+  ? iscloudstreamsconnectorservice.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..operations..actions:TestRest.connectionAlias
+  : project.siqa_git_3030.WmSalesforceRESTProvider.com_webmethods_cloudstreams_salesforce_rest_v60.connections:RestConnAlias
+  jdbc.SAP TxStore Pool.spyparms: SpyAttributes=(log=(file)logs/spy/SAP_TxStore_Pool.log;logTName=yes;timestamp=yes)
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cn.retryIfRequestSentOk
+  : "true"
+  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.serverName
+  : 9.46.196.248
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.pr.userAgent
+  : Cloudstreams
+  jdbc.SAP TxStore Pool.expireTime: "60000"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.minimumPoolSize
+  : "1"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.poolIncrementSize
+  : "1"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.oauth_v20.authorizationHeaderPrefix
+  : Bearer
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.oauth_v20.refreshToken
+  : "{AES}iVEYOEICT1x7P9RL3dwVv0pQv1IODTw0Qm0vrSHPR8I0XZ0/KrBE7WODHo6AzR160DOPwKqbb3oMTCKFQlnaQ/g7JkyMztfW0zwKJm6lvFZuzitVA0hSa8yUlxGm0evN"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cr.authSchemeType
+  : none
+  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.expireTimeout
+  : "1000"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.pr.protocolVersion
+  : HTTP/1.1
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.socketLinger
+  : "-1"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cn.tcpNoDelay
+  : "false"
+  jdbc.SAP TxStore Pool.description: Connection Pool for the SAP Transaction Store
+  jdbc.SAP TxStore Pool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/SAP_TxStore_Pool.log;ddtdbg.ProtocolTraceShowTime=true
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cn.readTimeout
+  : "180000"
+  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.startupBackoffSecs
+  : "10"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.connectionEnabled
+  : "true"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cn.hostnameVerifier
+  : org.apache.http.conn.ssl.DefaultHostnameVerifier
+  jdbcfunc.SAPTxStore.failFastMode: false
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cx.grant_type
+  : refresh_token
+  jdbc.SAP TxStore Pool.useSSL: "false"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.pr.followServerRedirects
+  : "true"
+  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.startupRetryCount
+  : "0"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.readTimeout
+  : "30000"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.retryCount
+  : "4"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.oauth.consumerSecret
+  : "{AES}8bc8/WHaL3dph5PtuD02009Twi827NgOvyLy8mkfF31b5gfhajCNPAG/2OxW9yx8fPwx12ONSDGw1NRjVAxIemmK1wuN3U1rA1B0VhuZoUw="
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.blockTimeout
+  : "1000"
+  jdbc.SAP TxStore Pool.minConns: "5"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.sockBuffSize
+  : "8192"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.poolable
+  : "true"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.oauth_v20.refreshAccessToken
+  : "true"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.hostnameVerifier
+  : org.apache.http.conn.ssl.DefaultHostnameVerifier
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cn.providerUrl
+  : https://d0o000001qr6keac-dev-ed.my.salesforce.com/services/Soap/u/53.0
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cn.socketStaleCheck
+  : "true"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cn.enableSNI
+  : "true"
+  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.networkProtocol
+  : tcp
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cn.idleTimeout
+  : "-1"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.reuseAddr
+  : "false"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.connectTimeout
+  : "30000"
+  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.portNumber
+  : "3306"
+  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.trustStore
+  : ""
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.maximumPoolSize
+  : "10"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.keepAliveInterval
+  : "300000"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.poolIncrementSize
+  : "1"
+  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.minimumPoolSize
+  : "1"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.expireTimeout
+  : "1000"
+  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.maximumPoolSize
+  : "10"
+  jdbc.SAP TxStore Pool.maxConns: "10"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cn.keepAliveInterval
+  : "300000"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cn.retryCount
+  : "3"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.rh.requestHeaderNames
+  : "Content-Type,SOAPAction"
   ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.keyStore
   : ""
   ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.datasourceClass
@@ -239,40 +405,36 @@ configurationVariables:
   : siqatest
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.timeoutType
   : auto
-  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.poolable
-  : "false"
-  jdbc.SAP TxStore Pool.password: "{AES}nrGf3u7Wt20hFBGh5ZeEuQ=="
-  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.oauth_v20.authorizationServerUrl
-  : https://login.salesforce.com/services/oauth2/authorize
-  ? iscloudstreamsconnectorservice.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..operations..actions:TestRest.connectionAlias
-  : project.siqa_git_3030.WmSalesforceRESTProvider.com_webmethods_cloudstreams_salesforce_rest_v60.connections:RestConnAlias
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.socketStaleCheck
   : "true"
-  jdbc.SAP TxStore Pool.spyparms: SpyAttributes=(log=(file)logs/spy/SAP_TxStore_Pool.log;logTName=yes;timestamp=yes)
-  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.serverName
-  : 9.46.196.248
   jdbc.SAP TxStore Pool.snoopenabled: "false"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.pr.useChunking
+  : "false"
   ? iscloudstreamsconnectorservice.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..operations..actions:TestRest.virtualServiceName
   : WmCloudStreams.RestVS
   ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.driverType
   : TestDriver
-  jdbc.SAP TxStore Pool.expireTime: "60000"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.startupBackoffSecs
+  : "10"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.pr.serverRedirectMax
+  : "5"
   jdbc.SAP TxStore Pool.driverAlias: MySQL CC Driver
-  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.oauth_v20.authorizationHeaderPrefix
-  : Bearer
-  jdbcfunc.SAPTxStore.connPoolAlias: SAP TxStore Pool
-  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.oauth_v20.refreshToken
-  : "{AES}iVEYOEICT1x7P9RL3dwVv0pQv1IODTw0Qm0vrSHPR8I0XZ0/KrBE7WODHo6AzR160DOPwKqbb3oMTCKFQlnaQ/g7JkyMztfW0zwKJm6lvFZuzitVA0hSa8yUlxGm0evN"
-  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.expireTimeout
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cn.validateAfterInactivity
   : "1000"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.timeoutType
+  : fixed
+  jdbcfunc.SAPTxStore.connPoolAlias: SAP TxStore Pool
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.connectionEnabled
+  : "true"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.pr.httpContentCharSet
+  : ISO-8859-1
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.blockTimeout
   : "1000"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cr.username
+  : vidi@softwareag.com
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.enableCompression
   : "false"
-  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.socketLinger
-  : "-1"
   jdbc.SAP TxStore Pool.waitingThread: "10"
-  jdbc.SAP TxStore Pool.description: Connection Pool for the SAP Transaction Store
   ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.blockingTimeout
   : "1000"
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.startupRetryCount
@@ -281,87 +443,65 @@ configurationVariables:
   : "{AES}bzO+KX5xKoE0CKrgiYZryP2eL+yEb4WMRyT9e9eTOh6x4P/Apc10mBdlD622hedFpjjM2mW6isvwVvTU2j0Oc39oGxbg4IDdw0ow8hlUSJ/lpmkz3dVPDL7ehEvlZKUl3VQZsU/bnIkfCiECLjyjY2mK1wuN3U1rA1B0VhuZoUw="
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.startupBackoffSecs
   : "10"
-  jdbc.SAP TxStore Pool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/SAP_TxStore_Pool.log;ddtdbg.ProtocolTraceShowTime=true
-  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.startupBackoffSecs
-  : "10"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cr.password
+  : "{AES}B8rhTK4DUD1aV3z5wRGTjYaZCTv0DPT1C4mON3qCnd12s1Sa+177lUMRR7zTUwxx"
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.oauth_v20.authorizationHeaderInTokenRefresh
   : "false"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cn.socketLinger
+  : "-1"
   ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.poolIncrementSize
   : "1"
-  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.connectionEnabled
-  : "true"
   ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.otherProperties
   : loginTimeout=60;driverType=thin;
   ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.password
   : "{AES}D6/2AGfsSWDOcWCLrORnEQ=="
-  jdbcfunc.SAPTxStore.failFastMode: false
   jdbc.SAP TxStore Pool.poolThreshold: "0"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cn.sockBuffSize
+  : "8192"
   ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.dbType
   : MySQL
   jdbc.SAP TxStore Pool.spyenabled: "false"
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.oauth_v20.accessTokenRefreshURLRequest
   : URL Query String
-  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cx.grant_type
-  : refresh_token
-  jdbc.SAP TxStore Pool.useSSL: "false"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.poolable
+  : "true"
   ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.transactionType
   : NO_TRANSACTION
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.oauth.consumerId
   : 3MVG9pe2TCoA1Pf6F9PMP1LEDsuYm6pfL6T8OD7YSQUQsx36uZNIjUH3BCzBZ8lgStKaUEITogkQ7hNByxJjv
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.pr.allowCircularRedirects
+  : "true"
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.oauth_v20.scope
   : offline_access api refresh_token
   ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.databaseName
   : MYSQL_DATABASE
-  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.startupRetryCount
-  : "0"
-  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.readTimeout
-  : "30000"
-  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.retryCount
-  : "4"
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.oauth_v20.accessTokenRefreshURL
   : https://login.salesforce.com/services/oauth2/token
   ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.heartBeatInterval
   : "0"
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.enableSNI
   : "true"
-  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.oauth.consumerSecret
-  : "{AES}8bc8/WHaL3dph5PtuD02009Twi827NgOvyLy8mkfF31b5gfhajCNPAG/2OxW9yx8fPwx12ONSDGw1NRjVAxIemmK1wuN3U1rA1B0VhuZoUw="
-  jdbc.SAP TxStore Pool.minConns: "5"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cn.connectTimeout
+  : "180000"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.sessionExpiry
+  : "14"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cn.reuseAddr
+  : "false"
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.minimumPoolSize
   : "1"
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.tcpNoDelay
   : "false"
-  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.sockBuffSize
-  : "8192"
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.retryIfRequestSentOk
   : "true"
   jdbc.SAP TxStore Pool.dbURL: jdbc:mysql://localhost:3306/SAPTRANSACTIONSTORE?useSSL=false&characterEncoding=utf-8&autoReconnect=true&maxReconnects=5&sessionVariables=wait_timeout=2147483
-  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.poolable
-  : "true"
-  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.oauth_v20.refreshAccessToken
-  : "true"
-  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.hostnameVerifier
-  : org.apache.http.conn.ssl.DefaultHostnameVerifier
-  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.networkProtocol
-  : tcp
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.cn.enableCompression
+  : "false"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.rh.requestHeaderValues
+  : "text/xml,login"
+  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceProvider..com_webmethods_cloudstreams_salesforce_v53..connections:SoapConnAlias.pr.useExpectCont
+  : "false"
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.idleTimeout
   : "-1"
-  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.reuseAddr
-  : "false"
-  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.connectTimeout
-  : "30000"
-  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.portNumber
-  : "3306"
   jdbc.SAP TxStore Pool.userid: root
-  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.trustStore
-  : ""
-  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.keepAliveInterval
-  : "300000"
-  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.poolIncrementSize
-  : "1"
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.maximumPoolSize
   : "10"
-  ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.minimumPoolSize
-  : "1"
-  ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.expireTimeout
-  : "1000"
