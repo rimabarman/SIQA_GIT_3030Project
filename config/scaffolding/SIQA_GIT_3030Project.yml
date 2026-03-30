@@ -12,6 +12,7 @@ packages:
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
 - name: WmSalesforceRESTProvider
+  version: 12.0.0.0.16
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
 services:
@@ -55,6 +56,24 @@ services:
     wpmRegistry: licensed
   - name: WmSalesforceRESTProvider
     version: 12.0.0.0.16
+- serviceName: project.siqa_git_3030.integrations:Sum
+  packages:
+  - name: SIQA_GIT_3030Project
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.16
+- serviceName: pub.math:addInts
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.808
+- serviceName: pub.flow:debugLog
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.808
 - serviceName: project.siqa_git_3030.integrations:Test_AdapterScaffolding
   packages:
   - name: SIQA_GIT_3030Project
@@ -65,6 +84,52 @@ services:
     wpmRegistry: licensed
   - name: WmSalesforceRESTProvider
     version: 12.0.0.0.16
+- serviceName: project.siqa_git_3030.integrations:Test_RestConnector
+  packages:
+  - name: SIQA_GIT_3030Project
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.16
+- serviceName: project.siqa_git_3030.WmSalesforceRESTProvider.com_webmethods_cloudstreams_salesforce_rest_v60.operations.actions:TestRest
+  packages:
+  - name: SIQA_GIT_3030Project
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.16
+- serviceName: project.siqa_git_3030.integrations:deepclonetest
+  packages:
+  - name: SIQA_GIT_3030Project
+    version: "1.0"
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: WmSalesforceRESTProvider
+    version: 12.0.0.0.16
+- serviceName: pub.string:stringToBytes
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.808
+- serviceName: pub.utils:deepClone
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.808
+- serviceName: pub.string:bytesToString
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.808
+- serviceName: pub.alert:emit
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.808
 configurationVariables:
   ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.maximumPoolSize
   : "10"
@@ -90,12 +155,16 @@ configurationVariables:
   jdbc.SAP TxStore Pool.password: "{AES}nrGf3u7Wt20hFBGh5ZeEuQ=="
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.oauth_v20.authorizationServerUrl
   : https://login.salesforce.com/services/oauth2/authorize
+  ? iscloudstreamsconnectorservice.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..operations..actions:TestRest.connectionAlias
+  : project.siqa_git_3030.WmSalesforceRESTProvider.com_webmethods_cloudstreams_salesforce_rest_v60.connections:RestConnAlias
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.cn.socketStaleCheck
   : "true"
   jdbc.SAP TxStore Pool.spyparms: SpyAttributes=(log=(file)logs/spy/SAP_TxStore_Pool.log;logTName=yes;timestamp=yes)
   ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.serverName
   : 9.46.196.248
   jdbc.SAP TxStore Pool.snoopenabled: "false"
+  ? iscloudstreamsconnectorservice.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..operations..actions:TestRest.virtualServiceName
+  : WmCloudStreams.RestVS
   ? artConnection.SIQA_GIT_3030Project.project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.driverType
   : TestDriver
   jdbc.SAP TxStore Pool.expireTime: "60000"
@@ -120,7 +189,7 @@ configurationVariables:
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.startupRetryCount
   : "0"
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.oauth.accessToken
-  : "{AES}bzO+KX5xKoE0CKrgiYZryJcjrxrt7HaM5972en7kZK9SYyS42n6ldW5j/rG7lC2wMUXCKBFvxvnkOBenvrq9ixQAEinqPrEaOxmwaF7Bpolfpn/3YJoMYdyrBIK7WSkuYfRpq04bdGvWTG5R62N0rGmK1wuN3U1rA1B0VhuZoUw="
+  : "{AES}bzO+KX5xKoE0CKrgiYZryP2eL+yEb4WMRyT9e9eTOh6x4P/Apc10mBdlD622hedFpjjM2mW6isvwVvTU2j0Oc39oGxbg4IDdw0ow8hlUSJ/lpmkz3dVPDL7ehEvlZKUl3VQZsU/bnIkfCiECLjyjY2mK1wuN3U1rA1B0VhuZoUw="
   ? cloudstreamsconnection.project..siqa_git_3030..WmSalesforceRESTProvider..com_webmethods_cloudstreams_salesforce_rest_v60..connections:RestConnAlias.startupBackoffSecs
   : "10"
   jdbc.SAP TxStore Pool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/SAP_TxStore_Pool.log;ddtdbg.ProtocolTraceShowTime=true
