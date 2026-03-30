@@ -22,6 +22,12 @@ packages:
   gitUsername: manoj-jannu-IBM
   gitBranch: main
 - name: SIQAJDBCAdapterTests
+  version: "1.0"
+  gitServerName: MJANGit
+  gitUrl: https://github.com/manoj-jannu-IBM
+  gitUsername: manoj-jannu-IBM
+  gitBranch: main
+- name: SIQACloudStreamsTests
   gitServerName: MJANGit
   gitUrl: https://github.com/manoj-jannu-IBM
   gitUsername: manoj-jannu-IBM
@@ -39,8 +45,12 @@ services:
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.17
   - name: WmSalesforceRESTProvider
     version: 12.0.0.0.16
+  - name: SIQACloudStreamsTests
+    version: "1.0"
 - serviceName: project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.operations.actions:TestDB
   packages:
   - name: SIQA_GIT_3030Project
@@ -53,8 +63,12 @@ services:
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.17
   - name: WmSalesforceRESTProvider
     version: 12.0.0.0.16
+  - name: SIQACloudStreamsTests
+    version: "1.0"
 - serviceName: project.siqa_git_3030.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.operations.actions:TestDB1
   packages:
   - name: SIQA_GIT_3030Project
@@ -67,8 +81,12 @@ services:
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.17
   - name: WmSalesforceRESTProvider
     version: 12.0.0.0.16
+  - name: SIQACloudStreamsTests
+    version: "1.0"
 - serviceName: project.siqa_git_3030.WmSalesforceRESTProvider.com_webmethods_cloudstreams_salesforce_rest_v60.connections:RestConnAlias
   packages:
   - name: SIQA_GIT_3030Project
@@ -81,8 +99,12 @@ services:
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.17
   - name: WmSalesforceRESTProvider
     version: 12.0.0.0.16
+  - name: SIQACloudStreamsTests
+    version: "1.0"
 - serviceName: project.siqa_git_3030.integrations:Sum
   packages:
   - name: SIQA_GIT_3030Project
@@ -95,8 +117,12 @@ services:
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.17
   - name: WmSalesforceRESTProvider
     version: 12.0.0.0.16
+  - name: SIQACloudStreamsTests
+    version: "1.0"
 - serviceName: pub.math:addInts
   packages:
   - name: WmPublic
@@ -117,8 +143,12 @@ services:
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.17
   - name: WmSalesforceRESTProvider
     version: 12.0.0.0.16
+  - name: SIQACloudStreamsTests
+    version: "1.0"
 - serviceName: project.siqa_git_3030.integrations:Test_RestConnector
   packages:
   - name: SIQA_GIT_3030Project
@@ -131,8 +161,12 @@ services:
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.17
   - name: WmSalesforceRESTProvider
     version: 12.0.0.0.16
+  - name: SIQACloudStreamsTests
+    version: "1.0"
 - serviceName: project.siqa_git_3030.WmSalesforceRESTProvider.com_webmethods_cloudstreams_salesforce_rest_v60.operations.actions:TestRest
   packages:
   - name: SIQA_GIT_3030Project
@@ -145,8 +179,12 @@ services:
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.17
   - name: WmSalesforceRESTProvider
     version: 12.0.0.0.16
+  - name: SIQACloudStreamsTests
+    version: "1.0"
 - serviceName: project.siqa_git_3030.integrations:deepclonetest
   packages:
   - name: SIQA_GIT_3030Project
@@ -159,8 +197,12 @@ services:
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
+  - name: WmSalesforceProvider
+    version: 12.0.0.0.17
   - name: WmSalesforceRESTProvider
     version: 12.0.0.0.16
+  - name: SIQACloudStreamsTests
+    version: "1.0"
 - serviceName: pub.string:stringToBytes
   packages:
   - name: WmPublic
