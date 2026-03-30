@@ -12,18 +12,19 @@
   <record name="requires" javaclass="com.wm.util.Values">
     <value name="WmJDBCAdapter">10.3.0.0.34</value>
     <value name="WmSalesforceRESTProvider">12.0.0.0.16</value>
+    <value name="DADA_GlobalVariable1">1.0</value>
   </record>
   <null name="lazy_load_node_types"/>
   <null name="listACL"/>
   <value name="webappLoad">yes</value>
   <value name="reloadWithDependentPackage">yes</value>
-  <value name="build">18</value>
+  <value name="build">19</value>
   <null name="description"/>
   <value name="created_date">30-03-2026 01:43:50 GMT</value>
   <null name="extendedProperties"/>
   <null name="target_server_version"/>
   <value name="isProjectPackage">true</value>
-  <value name="lastUpdated">2026-03-30T02:57:12.03930528Z</value>
+  <value name="lastUpdated">2026-03-30T03:18:29.936972007Z</value>
   <value name="wmProjectId">fl14a2fce8d61e47c19481c69d7845178e</value>
   <value name="creator">Rima Barman</value>
 </Values>
